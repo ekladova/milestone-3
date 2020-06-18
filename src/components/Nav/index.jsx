@@ -7,17 +7,26 @@ const Nav = () => {
     <div>
       <ul className="list">
         <li className="list-elements">
-          <NavLink className="link-element" to={"/"} exact alt="Home">
+          <NavLink
+            className="link-element"
+            to={"/milestone-3/"}
+            exact
+            alt="Home"
+          >
             Home
           </NavLink>
         </li>
         <li className="list-elements">
-          <NavLink className="link-element" to={"/game"} alt="Game">
+          <NavLink className="link-element" to={"/milestone-3/game"} alt="Game">
             Game
           </NavLink>
         </li>
         <li className="list-elements">
-          <NavLink className="link-element" to={"/settings"} alt="Settings">
+          <NavLink
+            className="link-element"
+            to={"/milestone-3/settings"}
+            alt="Settings"
+          >
             Settings
           </NavLink>
         </li>
