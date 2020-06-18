@@ -6,7 +6,7 @@ const GamePage = ({ deck = [], onReset, onClick, totalTurns, matched }) => {
   return (
     <>
       <div>
-        <span>
+        <span className="container">
           <p>Total turns: {totalTurns} </p>
         </span>
       </div>
@@ -16,7 +16,7 @@ const GamePage = ({ deck = [], onReset, onClick, totalTurns, matched }) => {
           <Card key={i} number={i} onClick={onClick} {...card} />
         ))}
       </div>
-      <div className="reset-container">
+      <div className="container">
         <button className="reset" onClick={onReset}>
           Reset
         </button>

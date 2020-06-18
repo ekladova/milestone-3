@@ -12,10 +12,14 @@ const allCards = symbols.concat(symbols);
 function App() {
   const createNewDeck = () => createDeck(shuffle(allCards));
   const [deck, setDeck] = useState(createNewDeck());
-  const onReset = () => setDeck(createNewDeck());
   const [counter, setCounter] = useState(0);
-
   const [turns, setTurns] = useState(0);
+
+  const onReset = () => {
+    setDeck(createNewDeck());
+    setTurns(0);
+  };
+
   const [lastCard, setLastCard] = useState(null);
 
   const onClick = (e) => {
@@ -32,8 +36,7 @@ function App() {
     if (counter === 1) {
       if (deck[lastCard].symbol === deck[clickedCard].symbol) {
         deck[lastCard].matched = true;
-        deck[+e.target.dataset.number].matched = true;
-        console.log("match");
+        deck[clickedCard].matched = true;
         setCounter(0);
       } else {
         setCounter(0);
@@ -57,7 +60,6 @@ function App() {
 
   return (
     <>
-      <div>Some content, which is always here</div>
       <Switch>
         <Route path="/" exact component={HomePage} />
 

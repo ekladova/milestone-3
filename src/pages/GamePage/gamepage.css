@@ -2,13 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 75%;
+  width: 60%;
   justify-content: space-around;
-  margin: 3vw auto;
+  margin: 0 auto 3vw auto;
 }
 
-.reset-container {
+.container {
   margin: auto;
+  text-align: center;
+  font-size: larger;
   width: fit-content;
 }
 
