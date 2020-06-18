@@ -1,0 +1,26 @@
+.deck {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 75%;
+  justify-content: space-around;
+  margin: 3vw auto;
+}
+
+.reset-container {
+  margin: auto;
+  width: fit-content;
+}
+
+.reset {
+  padding: 2vw 5vw;
+  margin: 3vw;
+  background-color: transparent;
+  border: 1px red solid;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.reset:hover {
+  border: 2px red solid;
+}
