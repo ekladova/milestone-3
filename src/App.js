@@ -61,9 +61,9 @@ function App() {
   return (
     <>
       <Switch>
-        <Route path="/" exact component={HomePage} />
+        <Route path="/milestone-3/" exact component={HomePage} />
 
-        <Route path="/game" exact>
+        <Route path="/milestone-3/game" exact>
           <GamePage
             onClick={onClick}
             totalTurns={turns}
@@ -72,7 +72,7 @@ function App() {
           />
         </Route>
 
-        <Route path="/settings" exact component={SetPage} />
+        <Route path="/milestone-3/settings" exact component={SetPage} />
       </Switch>
     </>
   );
