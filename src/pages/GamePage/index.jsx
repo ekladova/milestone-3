@@ -13,7 +13,13 @@ const GamePage = ({ deck = [], onReset, onClick, totalTurns, matched }) => {
 
       <div matched={matched} className="deck">
         {deck.map((card, i) => (
-          <Card key={i} number={i} onClick={onClick} {...card} />
+          <Card
+            key={i}
+            className={"card"}
+            number={i}
+            onClick={onClick}
+            {...card}
+          />
         ))}
       </div>
       <div className="container">

@@ -9,3 +9,18 @@
   text-align: center;
   background-color: rgba(253, 59, 59, 0.055);
 }
+
+.flipped {
+  animation: flip 200ms linear;
+}
+
+@keyframes flip {
+  0% {
+    opacity: 0;
+    transform: rotateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(90deg);
+  }
+}
