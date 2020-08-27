@@ -6,30 +6,26 @@ const Nav = () => {
   return (
     <div>
       <ul className="list">
-        <li className="list-elements">
-          <NavLink
-            className="link-element"
-            to={"/milestone-3/"}
-            exact
-            alt="Home"
-          >
+        {/* <li className="list-elements">
+          <NavLink className="link-element" to={"/"} exact alt="Home">
             Home
           </NavLink>
-        </li>
+        </li> */}
         <li className="list-elements">
-          <NavLink className="link-element" to={"/milestone-3/game"} alt="Game">
+          <NavLink className="link-element" to={"/"} alt="Game">
             Game
           </NavLink>
         </li>
-        <li className="list-elements">
-          <NavLink
-            className="link-element"
-            to={"/milestone-3/settings"}
-            alt="Settings"
-          >
+        {/* <li className="list-elements">
+          <NavLink className="link-element" to={"/settings"} alt="Settings">
             Settings
           </NavLink>
         </li>
+        <li className="list-elements">
+          <NavLink className="link-element" to={"/products"} alt="Product">
+            Products
+          </NavLink>
+        </li> */}
       </ul>
     </div>
   );

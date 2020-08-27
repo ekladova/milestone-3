@@ -6,6 +6,7 @@ import GamePage from "./pages/GamePage";
 import SetPage from "./pages/SettingPage";
 import { symbols } from "./constants";
 import { createDeck, shuffle } from "./utilities";
+import { ProductPage } from "./pages";
 
 const allCards = symbols.concat(symbols);
 
@@ -28,18 +29,23 @@ function App() {
     currentGameState = "play";
     const clickedCard = +e.target.dataset.number;
 
-    setDeck(
-      deck.map((card, i) =>
-        i !== clickedCard
-          ? card
-          : { ...card, flipped: !card.flipped, className: "card flipped" }
-      )
-    );
-    setCounter(counter + 1);
-    setLastCard(clickedCard);
+    if (deck[lastCard] !== deck[clickedCard]) {
+      setDeck(
+        deck.map((card, i) =>
+          i !== clickedCard
+            ? card
+            : { ...card, flipped: !card.flipped, className: "card flipped" }
+        )
+      );
+      setCounter(counter + 1);
+      setLastCard(clickedCard);
+    }
 
-    if (counter === 1) {
-      if (deck[lastCard].symbol === deck[clickedCard].symbol) {
+    if (counter === 1 && deck[lastCard] !== deck[clickedCard]) {
+      if (
+        deck[lastCard].symbol === deck[clickedCard].symbol &&
+        deck[lastCard] !== deck[clickedCard]
+      ) {
         setDeck(
           deck.map((card) =>
             card.symbol === deck[lastCard].symbol
@@ -71,9 +77,6 @@ function App() {
       }
       setTurns(turns + 1);
     }
-
-    console.log(counter);
-    console.log(deck[lastCard], deck[clickedCard]);
   };
 
   useEffect(() => {
@@ -82,7 +85,9 @@ function App() {
       ? (currentGameState = "win")
       : (currentGameState = "play");
 
-    if (currentGameState === "win") alert("You Won!");
+    if (currentGameState === "win") {
+      alert("You Won!");
+    }
     return () => {
       // cleanup;
     };
@@ -90,22 +95,26 @@ function App() {
 
   return (
     <>
-      <Switch>
-        <Route path="/milestone-3/" exact>
-          <HomePage />
+      <GamePage
+        onClick={onClick}
+        totalTurns={turns}
+        deck={deck}
+        onReset={onReset}
+      />
+      {/* <Switch>
+        <Route path="/" exact>
+          
+        </Route> */}
+
+      {/* <Route path="/game" exact>
+           <HomePage /> 
         </Route>
 
-        <Route path="/milestone-3/game" exact>
-          <GamePage
-            onClick={onClick}
-            totalTurns={turns}
-            deck={deck}
-            onReset={onReset}
-          />
-        </Route>
+        <Route path="/settings" exact component={SetPage} />
 
-        <Route path="/milestone-3/settings" exact component={SetPage} />
-      </Switch>
+        <Route path="/products" component={ProductPage} />
+        <Route path="*" render={() => <img></img>} />*/}
+      {/* </Switch> */}
     </>
   );
 }

@@ -11,7 +11,7 @@ const Card = ({
 }) => {
   return (
     <div className={className} onClick={onClick} data-number={number}>
-      {matched ? "ok" : flipped ? symbol : "X"}
+      {matched ? "✔️" : flipped ? symbol : "X"}
     </div>
   );
 };

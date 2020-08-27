@@ -9,7 +9,7 @@ import { Nav } from "./components";
 ReactDOM.render(
   <Router>
     <React.StrictMode>
-      <Nav></Nav>
+      <Nav />
       <App />
     </React.StrictMode>
   </Router>,
